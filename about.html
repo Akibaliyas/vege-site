@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vegefoods - Organic Vegetables & Fruits</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+<!-- Ionicons for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="like.css" />
+<link rel="stylesheet" href="about2.css" />
+<style>
+   /* Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Section styles */
+  #blog-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header styles */
+  .header-row {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 2em;
+    color: #fd7e14;
+    margin-bottom: 8px;
+  }
+
+  /* Container for posts, scrollable horizontally */
+  .posts-row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap; 
+    gap: 15px;
+    margin-left: 12rcap;
+    margin-right:12rcap;;
+  }
+
+  /* Individual post styles */
+  .post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 300px;
+    height: fit-content;
+    margin: 20px;
+  }
+
+  .post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Image container */
+  .img-container {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Title styles */
+  .post-title {
+    font-size: 1em;
+    margin: 10px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  /* Make sure the <a> inside .post-title fits and wraps nicely */
+  .post-title a {
+    display: block;            /* fill the container */
+    width: 100%;               /* full width */
+    word-break: break-word;    /* break long words if needed */
+    overflow-wrap: break-word; /* fallback for breaking long words */
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Meta info styles */
+  .meta {
+    font-size: 0.8em;
+    color: #777;
+    margin: 0 10px 8px 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .meta .dot {
+    margin: 0 6px;
+    font-size: 1em;
+    color: #ccc;
+  }
+
+  .meta a {
+    color: #007bff;
+    margin-left: 4px;
+    text-decoration: none;
+  }
+
+  /* Paragraph */
+  .post p {
+    font-size: 0.9em;
+    margin: 0 10px 10px 10px;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Load More button */
+  .load-more-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 40rcap;
+    width: 45%;
+    align-items: center;
+  }
+
+  .load-more-btn {
+    padding: 10px 20px;
+    background-color: #fd7e14;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  .load-more-btn:hover {
+    background-color: #e76e0f;
+    transform: translateY(-2px);
+  }
+  /* Style for the form container */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading style */
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Labels style */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Button styles */
+/* button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+} */
+
+button:hover {
+  background-color: #218838;
+}
+ .container5 {
+    max-width: 1000px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    
+  }
+  #shop1:hover{
+    background-color: transparent;
+    color: #28a745;
+    border:solid 2px whitesmoke;
+    marging: 0px 5px 5px;
+  }
+
+  .center-text {
+    grid-column: 2;
+    text-align: center;
+    font-style: italic;
+    color: #739749;
+  }
+
+  .center-text h3 {
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+  }
+
+  .center-text div {
+    font-size: 1rem;
+  }
+
+  .center-text button {
+    background-color: #739749;
+    border: none;
+    padding: 12px 28px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .center-text button:hover {
+    background-color: #5a7336;
+  }
+
+  .image-box {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  }
+
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* border-radius: 5px; */
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: #739749;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    user-select: none;
+  }
+
+  /* Grid placement */
+  .fruits {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .juices {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .vegetables {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .dried {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+
+  .basket {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .center-text {
+      grid-column: 1 / 3;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .basket {
+      grid-column: 1 / 3;
+    }
+  }
+
+  /* Responsive: Mobile */
+  @media (max-width: 500px) {
+    body {
+      margin: 10px;
+    }
+
+    .container5{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 15px;
+    }
+
+    .fruits,
+    .center-text,
+    .juices,
+    .vegetables,
+    .basket,
+    .dried {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+
+    .center-text {
+      font-size: 1rem;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .center-text h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .center-text button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 18px;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    .post {
+      flex: 0 0 150px;
+    }
+    .img-container {
+      height: 100px;
+    }
+    .post-title {
+      font-size: 0.9em;
+    }
+    .meta {
+      font-size: 0.7em;
+    }
+    .post p {
+      font-size: 0.8em;
+    }
+  }
+  
+</style>
+</head>
+<body>
+
+<!-- Top Info Bar -->
+
+<div class="top-info-bar">
+  <marquee>
+  <div class="top-info-container" style="width: fit-content;">
+    <div class="info-item">
+      <i class="icon ion-ios-telephone"></i>
+      
+      <span class="info-text">+ 1235 2355 98</span>
+    </div>
+    <div class="info-item">
+      <i class="icon ion-ios-email"></i>
+      <a href="mailto:email@example.com" class="info-link">aqibaliyaas@gmail.com</a>
+    </div>
+    <div class="info-item info-right">
+      <span class="info-text">3-5 Business days delivery & Free Returns</span>
+    </div>
+  </div>
+</div>
+</marquee>
+</div>
+
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Vegefoods</a>
+    <div class="menu-toggle" id="menu-toggle"><i class="ion-navicon-round"></i></div>
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="shop.html" class="dropdown-item">Shop</a></li>
+          <li><a href="wishlist.html" class="dropdown-item">Wishlist</a></li>
+          <li><a href="product s.html" class="dropdown-item">Single Product</a></li>
+          <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+          <li><a href="checkout.html" class="dropdown-item">Checkout</a></li>
+        </ul>
+      </li>
+      <li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+      <li class="nav-item cart">
+        <a href="cart.html" class="nav-link cart-link">
+          <i class="ion-ios-cart"></i> [0]
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- </section> -->
+ <!-- Placeholder for main content, sliders, etc. (not included in this scope) -->
+
+  
+  <!-- Header Banner -->
+  <section class="about-banner">
+    <div class="overlay">
+      <h2>ABOUT US</h2>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="about.jpg" alt="Woman shopping vegetables">
+        <div class="play-btn">▶</div>
+      </div>
+
+      <div class="about-content">
+        <h3>Welcome to Vegefoods an <br> eCommerce website</h3>
+        <p>
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in Bookmarksgrove right at the coast
+          of the Semantics, a large language ocean.
+        </p>
+        <p>
+          A small river named Duden flows by their place and supplies it with the necessary regelialia.
+          It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+        </p>
+        <a href="#" class="btn">Shop Now</a>
+
+        <div class="newsletter">
+          <h4>Subscribe to our Newsletter</h4>
+          <p>Get e-mail updates about our latest shops and special offers.</p>
+          <form>
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section class="deal">
+    <div class="deal-content">
+      <h2>🔥 Limited Time Deal</h2>
+      <p>Get 50% off all organic vegetables. Hurry up! Offer ends soon.</p>
+      <div class="countdown">
+        <div><span id="days">00</span><small>Days</small></div>
+        <div><span id="hours">00</span><small>Hours</small></div>
+        <div><span id="minutes">00</span><small>Mins</small></div>
+        <div><span id="seconds">00</span><small>Secs</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Our satisfied customer says</h2>
+    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+    
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+        <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia."</p>
+        <h4>Andrew Smith</h4>
+        <span>Marketing Manager</span>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+        <p>"A wonderful experience! The vegetables are always fresh and delivery is quick."</p>
+        <h4>Sarah Johnson</h4>
+        <span>Designer</span>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Customer">
+        <p>"The best organic food site I’ve used. Everything tastes amazing!"</p>
+        <h4>Edward Brown</h4>
+        <span>Businessman</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="prev">‹</button>
+      <button id="next">›</button>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <h2>Vegefoods</h2>
+    <p>"Vegefoods offers fresh, organic, and delicious plant-based products to nourish your body and delight your taste buds."</p>
+    <div class="social-icons">
+      <a href="#"><i class="ion-social-twitter"></i></a>
+      <a href="#"><i class="ion-social-facebook"></i></a>
+      <a href="#"><i class="ion-social-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchanges</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Questions?</h3>
+      <ul>
+        <li><i class="ion-ios-location"></i> Pak ideal H3, Mountain View, Rwp, PK</li>
+        <li><a href="#"><i class="ion-ios-call"></i> +2 392 3929 210</a></li>
+        <li><a href="#"><i class="ion-ios-mail"></i> aqibaliyaas@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footer-year"></span> All rights reserved | Made by Akibaliyas with &hearts;</p>
+  </div>
+</footer>
+
+<!-- Loader (optional) -->
+<div id="loader" class="loader">
+  <div class="loader-inner"></div>
+</div>
+
+<!-- Scripts -->
+<script src="like.js"></script>
+<!-- <script src="likejs 2.js"></script> -->
+ <script>
+
+let currentIndex = 0;
+const slideIntervalTime = 3000; // 3 seconds
+let slideInterval;
+
+function updateSlide() {
+  const itemWidth = items[0].offsetWidth + 20; // width + margin
+  const offset = -currentIndex * itemWidth;
+  slider.style.transform = `translateX(${offset}px)`;
+}
+
+// Function to move to the next slide with looping
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalItems; // loop back to start
+  updateSlide();
+}
+
+// Function to move to the previous slide with looping
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems; // loop back
+  updateSlide();
+}
+
+// Start automatic sliding
+slideInterval = setInterval(nextSlide, slideIntervalTime);
+
+// Manual controls
+document.getElementById('prevBtn').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+// Reset interval after manual navigation to keep smooth auto-sliding
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
+ </script>
+ <script src="about2.js"></script>
+</body>
+</html>

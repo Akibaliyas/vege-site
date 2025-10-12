@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vegefoods - Organic Vegetables & Fruits</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+<!-- Ionicons for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="like.css" />
+<link rel="stylesheet" href="cart.css" />
+
+
+<style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* Hero section styles */
+.hero {
+  background: url(images/category-1.jpg) center/cover no-repeat;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.overlay h1 {
+  font-size: 36px;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Categories filter - moved here, centered */
+.category-filter {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+
+}
+
+.category-filter button {
+  background: none;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 6px 18px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+  background: #6eb12c;
+  color: #fff;
+  border-color: #6eb12c;
+}
+
+/* Product Cards Container - Flex layout */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Product Card styles */
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  flex: 1 1 220px;
+  max-width: 220px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #6eb12c;
+}
+
+.product-card .old-price {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+/* "NEW" label styles */
+.new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #6eb12c;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* Pagination styles - moved before footer */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.pagination span {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 50%;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination span.active,
+.pagination span:hover {
+  background: #6eb12c;
+  color: #fff;
+  border-color: #6eb12c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card img {
+    height: 130px;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+}
+
+  /* Grid placement */
+  .fruits {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .juices {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .vegetables {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .dried {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+
+  .basket {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .center-text {
+      grid-column: 1 / 3;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .basket {
+      grid-column: 1 / 3;
+    }
+  }
+
+  /* Responsive: Mobile */
+  @media (max-width: 500px) {
+    body {
+      margin: 10px;
+    }
+
+    .container5{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 15px;
+      marging-l;
+    }
+
+    .fruits,
+    .center-text,
+    .juices,
+    .vegetables,
+    .basket,
+    .dried {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+
+    .center-text {
+      font-size: 1rem;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .center-text h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .center-text button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 18px;
+    }
+  }
+  /* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: url('images/category-1.jpg') center/cover no-repeat;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.overlay {
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.overlay h1 {
+  font-size: 36px;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+/* ===== Checkout Container ===== */
+.checkout-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* ===== Billing Form ===== */
+.billing-details {
+  background: #fff;
+}
+
+.billing-details h2 {
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+form .full {
+  grid-column: 1 / 3;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #6eb12c;
+}
+
+form .checkboxes {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+form .checkboxes label {
+  font-size: 14px;
+}
+
+/* ===== Right Column (Cart + Payment) ===== */
+.checkout-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cart-total,
+.payment-method {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  background: #fff;
+}
+
+.cart-total h3,
+.payment-method h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Cart Totals */
+.cart-total ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.cart-total ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.cart-total ul li.total {
+  border-top: 1px solid #ddd;
+  font-weight: 600;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+/* Payment Methods */
+.payment-method label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.payment-method input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #6eb12c;
+}
+
+/* Place Order Button */
+.place-order-btn {
+  background: #6eb12c;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.place-order-btn:hover {
+  background: #5a9a22;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f3;
+  color: #333;
+}
+
+/* Banner */
+.cart-banner {
+  background: url(category-1.jpg) no-repeat center/cover;
+  height: 200px;
+  position: relative;
+}
+
+.cart-banner .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-banner h2 {
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Cart Section */
+.cart-section {
+  padding: 50px 8%;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.cart-table thead {
+  background: #7ac142;
+  color: white;
+}
+
+.cart-table th, .cart-table td {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 15px;
+}
+
+.product-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.product-info h4 {
+  font-size: 1rem;
+}
+
+.product-info p {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.qty {
+  width: 60px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Bottom Sections */
+.cart-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cart-bottom > div {
+  background: #fff;
+  padding: 20px;
+  flex: 1 1 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-bottom h4 {
+  margin-bottom: 10px;
+}
+
+.cart-bottom p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.cart-bottom input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.cart-bottom button {
+  background: #7ac142;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.summary hr {
+  margin: 10px 0;
+}
+
+.summary p {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-banner h2 {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-table thead {
+    display: none;
+  }
+
+  .cart-table tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+  }
+
+  .cart-table td {
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .cart-bottom {
+    flex-direction: column;
+  }
+
+  .cart-bottom > div {
+    width: 100%;
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  form .checkboxes {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    .post {
+      flex: 0 0 150px;
+    }
+    .img-container {
+      height: 100px;
+    }
+    .post-title {
+      font-size: 0.9em;
+    }
+    .meta {
+      font-size: 0.7em;
+    }
+    .post p {
+      font-size: 0.8em;
+    }
+  }
+  @media(max-width: 768px) {
+  .nav-menu {
+    display: none; /* hide menu by default on small screens */
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    z-index: 999;
+  }
+  .nav-menu.show {
+    display: flex; /* show menu when 'show' class is added */
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Info Bar -->
+<div class="top-info-bar">
+  <marquee>
+    <div class="top-info-container" style="width: fit-content;">
+      <div class="info-item">
+        <i class="icon ion-ios-telephone"></i>
+        <span class="info-text">+ 1235 2355 98</span>
+      </div>
+      <div class="info-item">
+        <i class="icon ion-ios-email"></i>
+        <a href="mailto:email@example.com" class="info-link">aqibaliyaas@gmail.com</a>
+      </div>
+      <div class="info-item info-right">
+        <span class="info-text">3-5 Business days delivery & Free Returns</span>
+      </div>
+    </div>
+  </marquee>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Vegefoods</a>
+    <div class="menu-toggle" id="menu-toggle"><i class="ion-navicon-round"></i></div>
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="shop.html" class="dropdown-item">Shop</a></li>
+          <li><a href="wishlist.html" class="dropdown-item">Wishlist</a></li>
+          <li><a href="product s.html" class="dropdown-item">Single Product</a></li>
+          <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+          <li><a href="checkout.html" class="dropdown-item">Checkout</a></li>
+        </ul>
+      </li>
+      <li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="Blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+      <li class="nav-item cart">
+        <a href="cart.html" class="nav-link cart-link">
+          <i class="ion-ios-cart"></i> [0]
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero">
+  <div class="overlay">
+  
+    <h2 style="padding-top: 8%;">Card</h2>
+  </div>
+  <img src="category-1.jpg" alt="" style="width: 100%;">
+</section>
+
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <div class="cart-container">
+
+      <!-- Table -->
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body">
+          <tr>
+            <td class="product-info">
+              <img src="product-3.jpg" alt="">
+              <div>
+                <h4>Bell Pepper</h4>
+                <p>Far far away, behind the word mountains.</p>
+              </div>
+            </td>
+            <td>£3.50</td>
+            <td>
+              <input type="number" class="qty" value="1" min="1">
+            </td>
+            <td class="total">£3.50</td>
+          </tr>
+
+          <tr>
+            <td class="product-info">
+              <img src="product-4.jpg" alt="">
+              <div>
+                <h4>Red Cabbage</h4>
+                <p>Separated they live in Bookmarksgrove.</p>
+              </div>
+            </td>
+            <td>£2.25</td>
+            <td>
+              <input type="number" class="qty" value="1" min="1">
+            </td>
+            <td class="total">£2.25</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Bottom Sections -->
+      <div class="cart-bottom">
+        <div class="coupon">
+          <h4>Coupon Code</h4>
+          <p>Enter your coupon code if you have one</p>
+          <input type="text" id="coupon-input" placeholder="Coupon code">
+          <button id="apply-coupon">Apply Coupon</button>
+        </div>
+
+        <div class="shipping">
+          <h4>Estimate shipping and tax</h4>
+          <p>Enter your destination to get a shipping estimate</p>
+          <input type="text" placeholder="Country">
+          <input type="text" placeholder="State / Province">
+          <input type="text" placeholder="Postal Code">
+          <button>Estimate</button>
+        </div>
+
+        <div class="summary">
+          <h4>Cart Totals</h4>
+          <p>Subtotal: <span id="subtotal">£5.75</span></p>
+          <p>Shipping: <span id="shipping">£2.00</span></p>
+          <hr>
+          <p><strong>Total: <span id="grand-total">£7.75</span></strong></p>
+          <button id="checkout">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <h2>Vegefoods</h2>
+    <p>"Vegefoods offers fresh, organic, and delicious plant-based products to nourish your body and delight your taste buds."</p>
+    <div class="social-icons">
+      <a href="#"><i class="ion-social-twitter"></i></a>
+      <a href="#"><i class="ion-social-facebook"></i></a>
+      <a href="#"><i class="ion-social-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchanges</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Questions?</h3>
+      <ul>
+        <li><i class="ion-ios-location"></i> Pak ideal H3, Mountain View, Rwp, PK</li>
+        <li><a href="#"><i class="ion-ios-call"></i> +2 392 3929 210</a></li>
+        <li><a href="#"><i class="ion-ios-mail"></i> aqibaliyaas@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footer-year"></span> All rights reserved | Made by Akibaliyas with &hearts;</p>
+  </div>
+</footer>
+
+<!-- Loader (optional) -->
+<div id="loader" class="loader">
+  <div class="loader-inner"></div>
+</div>
+
+<!-- Scripts -->
+<script src="like.js"></script>
+<!-- <script src="likejs 2.js"></script> -->
+<script>
+let currentIndex = 0;
+const slideIntervalTime = 3000; // 3 seconds
+let slideInterval;
+
+function updateSlide() {
+  const itemWidth = items[0].offsetWidth + 20; // width + margin
+  const offset = -currentIndex * itemWidth;
+  slider.style.transform = `translateX(${offset}px)`;
+}
+
+// Function to move to the next slide with looping
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalItems; // loop back to start
+  updateSlide();
+}
+
+// Function to move to the previous slide with looping
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems; // loop back
+  updateSlide();
+}
+
+// Start automatic sliding
+slideInterval = setInterval(nextSlide, slideIntervalTime);
+
+// Manual controls
+document.getElementById('prevBtn').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+// Reset interval after manual navigation to keep smooth auto-sliding
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
+</script>
+</body>
+</html>

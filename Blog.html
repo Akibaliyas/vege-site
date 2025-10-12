@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vegefoods - Organic Vegetables & Fruits</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+<!-- Ionicons for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+<!-- Custom CSS -->
+<link rel="stylesheet" href="like.css" />
+<link rel="stylesheet" href="about2.css" />
+
+
+<style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* Hero section styles */
+.hero {
+  background: url(images/category-1.jpg) center/cover no-repeat;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.overlay h1 {
+  font-size: 36px;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Categories filter - moved here, centered */
+.category-filter {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+
+}
+
+.category-filter button {
+  background: none;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 6px 18px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+  background: #6eb12c;
+  color: #fff;
+  border-color: #6eb12c;
+}
+
+/* Product Cards Container - Flex layout */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Product Card styles */
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  flex: 1 1 220px;
+  max-width: 220px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #6eb12c;
+}
+
+.product-card .old-price {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+/* "NEW" label styles */
+.new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #6eb12c;
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* Pagination styles - moved before footer */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.pagination span {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 50%;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination span.active,
+.pagination span:hover {
+  background: #6eb12c;
+  color: #fff;
+  border-color: #6eb12c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card img {
+    height: 130px;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+}
+
+  /* Grid placement */
+  .fruits {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .juices {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .vegetables {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .dried {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+
+  .basket {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .center-text {
+      grid-column: 1 / 3;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .basket {
+      grid-column: 1 / 3;
+    }
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Section styles */
+  #blog-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header styles */
+  .header-row {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 2em;
+    color: #fd7e14;
+    margin-bottom: 8px;
+  }
+
+  /* Container for posts, scrollable horizontally */
+  .posts-row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap; 
+    gap: 15px;
+    margin-left: 12rcap;
+    margin-right:12rcap;;
+  }
+
+  /* Individual post styles */
+  .post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 300px;
+    height: fit-content;
+    margin: 20px;
+  }
+
+  .post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Image container */
+  .img-container {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Title styles */
+  .post-title {
+    font-size: 1em;
+    margin: 10px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  /* Make sure the <a> inside .post-title fits and wraps nicely */
+  .post-title a {
+    display: block;            /* fill the container */
+    width: 100%;               /* full width */
+    word-break: break-word;    /* break long words if needed */
+    overflow-wrap: break-word; /* fallback for breaking long words */
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Meta info styles */
+  .meta {
+    font-size: 0.8em;
+    color: #777;
+    margin: 0 10px 8px 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .meta .dot {
+    margin: 0 6px;
+    font-size: 1em;
+    color: #ccc;
+  }
+
+  .meta a {
+    color: #007bff;
+    margin-left: 4px;
+    text-decoration: none;
+  }
+
+  /* Paragraph */
+  .post p {
+    font-size: 0.9em;
+    margin: 0 10px 10px 10px;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Load More button */
+  .load-more-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 40rcap;
+    width: 45%;
+    align-items: center;
+  }
+
+  .load-more-btn {
+    padding: 10px 20px;
+    background-color: #fd7e14;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  .load-more-btn:hover {
+    background-color: #e76e0f;
+    transform: translateY(-2px);
+  }
+  /* Style for the form container */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading style */
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Labels style */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Button styles */
+/* button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+} */
+
+button:hover {
+  background-color: #218838;
+}
+ .container5 {
+    max-width: 1000px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    
+  }
+  #shop1:hover{
+    background-color: transparent;
+    color: #28a745;
+    border:solid 2px whitesmoke;
+    marging: 0px 5px 5px;
+  }
+
+  .center-text {
+    grid-column: 2;
+    text-align: center;
+    font-style: italic;
+    color: #739749;
+  }
+
+  .center-text h3 {
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+  }
+
+  .center-text div {
+    font-size: 1rem;
+  }
+
+  .center-text button {
+    background-color: #739749;
+    border: none;
+    padding: 12px 28px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .center-text button:hover {
+    background-color: #5a7336;
+  }
+
+  .image-box {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  }
+
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* border-radius: 5px; */
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+
+  .label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: #739749;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    user-select: none;
+  }
+
+  /* Grid placement */
+  .fruits {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .juices {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .vegetables {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .dried {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+
+  .basket {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .center-text {
+      grid-column: 1 / 3;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .basket {
+      grid-column: 1 / 3;
+    }
+  }
+
+  /* Responsive: Mobile */
+  @media (max-width: 500px) {
+    body {
+      margin: 10px;
+    }
+
+    .container5{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 15px;
+    }
+
+    .fruits,
+    .center-text,
+    .juices,
+    .vegetables,
+    .basket,
+    .dried {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+
+    .center-text {
+      font-size: 1rem;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .center-text h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .center-text button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 18px;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    .post {
+      flex: 0 0 150px;
+    }
+    .img-container {
+      height: 100px;
+    }
+    .post-title {
+      font-size: 0.9em;
+    }
+    .meta {
+      font-size: 0.7em;
+    }
+    .post p {
+      font-size: 0.8em;
+    }
+  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fafaf5;
+      color: #333;
+    }
+
+    /* Header Section */
+    .blog-header {
+      background: url(bg_1.jpg) center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .blog-header h3 {
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .blog-header h1 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Main Blog Section */
+    .blog-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .blog-list {
+      flex: 3;
+    }
+
+    .blog-post {
+      display: flex;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .blog-post img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .blog-content {
+      text-align: left;
+    }
+
+    .blog-content h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .blog-meta {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .read-more {
+      background: #6fa044;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .read-more:hover {
+      background: #588a33;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 1.2;
+    }
+
+    .sidebar-box {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+      border-bottom: 2px solid #6fa044;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 6px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .sidebar ul li span {
+      float: right;
+      color: #999;
+    }
+
+    .recent-post {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .recent-post img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .recent-post a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      background: #f3f3f3;
+      color: #555;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tags span:hover {
+      background: #6fa044;
+      color: #fff;
+    }
+
+    .scroll-top {
+      background: #6fa044;
+      color: white;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-container {
+        flex-direction: column;
+      }
+
+      .blog-post {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .blog-post img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+  /* Responsive: Mobile */
+  @media (max-width: 500px) {
+    body {
+      margin: 10px;
+    }
+
+    .container5{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 15px;
+      marging-l;
+    }
+
+    .fruits,
+    .center-text,
+    .juices,
+    .vegetables,
+    .basket,
+    .dried {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+
+    .center-text {
+      font-size: 1rem;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+
+    .center-text h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .center-text button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 18px;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    .post {
+      flex: 0 0 150px;
+    }
+    .img-container {
+      height: 100px;
+    }
+    .post-title {
+      font-size: 0.9em;
+    }
+    .meta {
+      font-size: 0.7em;
+    }
+    .post p {
+      font-size: 0.8em;
+    }
+  }
+  @media(max-width: 768px) {
+  .nav-menu {
+    display: none; /* hide menu by default on small screens */
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    z-index: 999;
+  }
+  .nav-menu.show {
+    display: flex; /* show menu when 'show' class is added */
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Info Bar -->
+<div class="top-info-bar">
+  <marquee>
+    <div class="top-info-container" style="width: fit-content;">
+      <div class="info-item">
+        <i class="icon ion-ios-telephone"></i>
+        <span class="info-text">+ 1235 2355 98</span>
+      </div>
+      <div class="info-item">
+        <i class="icon ion-ios-email"></i>
+        <a href="mailto:email@example.com" class="info-link">aqibaliyaas@gmail.com</a>
+      </div>
+      <div class="info-item info-right">
+        <span class="info-text">3-5 Business days delivery & Free Returns</span>
+      </div>
+    </div>
+  </marquee>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Vegefoods</a>
+    <div class="menu-toggle" id="menu-toggle"><i class="ion-navicon-round"></i></div>
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Shop</a>
+        <ul class="dropdown-menu">
+          <li><a href="shop.html" class="dropdown-item">Shop</a></li>
+          <li><a href="wishlist.html" class="dropdown-item">Wishlist</a></li>
+          <li><a href="product s.html" class="dropdown-item">Single Product</a></li>
+          <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+          <li><a href="checkout.html" class="dropdown-item">Checkout</a></li>
+        </ul>
+      </li>
+      <li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+      <li class="nav-item cart">
+        <a href="cart.html" class="nav-link cart-link">
+          <i class="ion-ios-cart"></i> [0]
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+  <div class="blog-header">
+    <h3>Home / Blog</h3>
+    <h1>Blog</h1>
+  </div>
+
+  <!-- Main Container -->
+  <div class="blog-container">
+    <!-- Blog List -->
+    <div class="blog-list">
+      <!-- Post 1 -->
+      <div class="blog-post">
+        <img src="image_1.jpg.webp" alt="Blog 1">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | June 12, 2025</div>
+          <h3>Even the all-powerful Pointing has no control about the blind texts.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="blog-post">
+        <img src="image_2.jpg.webp" alt="Blog 2">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | July 5, 2025</div>
+          <h3>Healthy living through fresh vegetables.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="blog-post">
+        <img src="image_3.jpg" alt="Blog 3">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | August 20, 2025</div>
+          <h3>Juicing for health: benefits and recipes.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      <!-- Post 4 -->
+       <div class="blog-post">
+        <img src="image_4.jpg" alt="Blog 3">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | August 20, 2025</div>
+          <h3>Juicing for health: benefits and recipes.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      <!-- Post 5 -->
+       <div class="blog-post">
+        <img src="image_5.jpg" alt="Blog 3">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | August 20, 2025</div>
+          <h3>Juicing for health: benefits and recipes.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      <!-- Post 6 -->
+        <div class="blog-post">
+        <img src="image_6.jpg" alt="Blog 3">
+        <div class="blog-content">
+          <div class="blog-meta">by Admin | August 20, 2025</div>
+          <h3>Juicing for health: benefits and recipes.</h3>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+  
+     
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Categories -->
+      <div class="sidebar-box">
+        <h4>Categories</h4>
+        <ul>
+          <li>Vegetables <span>(5)</span></li>
+          <li>Fruits <span>(3)</span></li>
+          <li>Juices <span>(4)</span></li>
+          <li>Dried <span>(2)</span></li>
+        </ul>
+      </div>
+
+      <!-- Recent Blog -->
+      <div class="sidebar-box">
+        <h4>Recent Blog</h4>
+        <div class="recent-post">
+          <img src="image_2.jpg.webp" alt="">
+          <a href="#">Fresh Veggies for Summer Meals</a>
+        </div>
+        <div class="recent-post">
+          <img src="image_1.jpg.webp" alt="">
+          <a href="#">The Benefits of Organic Eating</a>
+        </div>
+        <div class="recent-post">
+          <img src="image_3.jpg" alt="">
+          <a href="#">Juices that Boost Immunity</a>
+        </div>
+      </div>
+
+      <!-- Tag Cloud -->
+      <div class="sidebar-box">
+        <h4>Tag Cloud</h4>
+        <div class="tags">
+          <span>Health</span>
+          <span>Fruits</span>
+          <span>Organic</span>
+          <span>Vegetables</span>
+          <span>Juice</span>
+          <span>Fresh</span>
+        </div>
+      </div>
+
+      <!-- Paragraph -->
+      <div class="sidebar-box">
+        <h4>Paragraph</h4><br>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur modi quas delectus inventore quisquam, maxime cupiditate dolorem. Ducimus, blanditiis non minima temporibus harum eligendi laboriosam minus facere, ipsum provident rerum.</p> 
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <h2>Vegefoods</h2>
+    <p>"Vegefoods offers fresh, organic, and delicious plant-based products to nourish your body and delight your taste buds."</p>
+    <div class="social-icons">
+      <a href="#"><i class="ion-social-twitter"></i></a>
+      <a href="#"><i class="ion-social-facebook"></i></a>
+      <a href="#"><i class="ion-social-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <div>
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns & Exchanges</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Questions?</h3>
+      <ul>
+        <li><i class="ion-ios-location"></i> Pak ideal H3, Mountain View, Rwp, PK</li>
+        <li><a href="#"><i class="ion-ios-call"></i> +2 392 3929 210</a></li>
+        <li><a href="#"><i class="ion-ios-mail"></i> aqibaliyaas@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footer-year"></span> All rights reserved | Made by Akibaliyas with &hearts;</p>
+  </div>
+</footer>
+
+<!-- Loader (optional) -->
+<div id="loader" class="loader">
+  <div class="loader-inner"></div>
+</div>
+
+<!-- Scripts -->
+<script src="like.js"></script>
+<!-- <script src="likejs 2.js"></script> -->
+<script>
+let currentIndex = 0;
+const slideIntervalTime = 3000; // 3 seconds
+let slideInterval;
+
+function updateSlide() {
+  const itemWidth = items[0].offsetWidth + 20; // width + margin
+  const offset = -currentIndex * itemWidth;
+  slider.style.transform = `translateX(${offset}px)`;
+}
+
+// Function to move to the next slide with looping
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalItems; // loop back to start
+  updateSlide();
+}
+
+// Function to move to the previous slide with looping
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems; // loop back
+  updateSlide();
+}
+
+// Start automatic sliding
+slideInterval = setInterval(nextSlide, slideIntervalTime);
+
+// Manual controls
+document.getElementById('prevBtn').addEventListener('click', () => {
+  prevSlide();
+  resetInterval();
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  nextSlide();
+  resetInterval();
+});
+
+// Reset interval after manual navigation to keep smooth auto-sliding
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
+</script>
+</body>
+</html>

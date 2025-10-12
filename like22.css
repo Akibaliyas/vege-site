@@ -1,0 +1,442 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', 'Lora', 'Amatic SC', sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #333;
+  overflow-x: hidden;
+}
+/* Top Info Bar */
+.top-info-bar {
+  background-color: #82ae46;
+  height: 30px;
+  padding: 1px 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.top-info-container {
+  color: black;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  margin: 4px 10px;
+}
+.icon {
+  margin-right: 8px;
+}
+.info-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.info-link:hover {
+  color: #ddd;
+}
+.info-right {
+  text-align: right;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.brand:hover {
+  color: #14dff2;
+}
+
+/* Hamburger menu icon */
+.menu-toggle {
+  display: none; /* Hidden on desktop, shown on mobile via media query */
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex; /* default for desktop */
+  list-style: none;
+  align-items: center;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Desktop styles for nav items */
+.nav-item {
+  margin-left: 20px;
+  position: relative;
+}
+
+ul li a {
+  font-size: 12px;
+}
+
+/* Remove default list style */
+ul {
+  list-style: none;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.nav-link:hover,
+.nav-item.active > .nav-link {
+  /* background-color: #14dff2; */
+  border-radius: 4px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+.dropdown:hover > .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-menu {
+  color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 4px;
+  z-index: 999;
+}
+.dropdown-item {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+/* Hero Slider */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+.slider {
+  display: flex;
+  height: 100%;
+  width: 200%;
+  transition: transform 1s ease;
+}
+.slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+.slide-content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.btn-primary {
+  background: #f96d00;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+/* Services */
+.services-section {
+  padding: 40px 20px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.service-box {
+  flex: 1 1 200px;
+  max-width: 250px;
+  margin: 10px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.service-box:hover {
+  transform: translateY(-5px);
+}
+.icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  align-items: center;
+}
+.bg-color-1 { background-color: #f96d00; }
+.bg-color-2 { background-color: #00b894; }
+.bg-color-3 { background-color: #0984e3; }
+.bg-color-4 { background-color: #fdcb6e; }
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Categories */
+.categories-section {
+  padding: 40px 20px;
+  background: #f1f1f1;
+}
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* proro - assuming typo, no change needed */
+
+/* Large Vegetable category in the center-top spanning multiple columns */
+.category-large {
+  height: 140sjjklk;; /* seems like a typo, replace with valid height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  align-items: end;
+  color: #fff2;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.category-large:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.category-text {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Responsive adjustments for categories */
+@media(max-width: 992px) {
+  .category-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+  .category-text {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+  .category-small {
+    width: 80%;
+    height: 150px;
+  }
+}
+.category-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.category-text p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-primary:hover {
+  background-color: #ff3b2e;
+  transform: translateY(-2px);
+}
+
+/* Small categories positioned left and right of large */
+.category-small {
+  height: 580px;
+  width: 350px;
+  padding-right: 0%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+.category-small.left-top {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 5px;
+}
+.category-small.left-bottom {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 5px;
+}
+.category-small.right-top {
+  grid-column: 5;
+  grid-row: 1;
+  margin-bottom: 5px;
+}
+.category-small.right-bottom {
+  grid-column: 5;
+  grid-row: 2;
+  margin-top: 5px;
+}
+
+/* Optional hover effects for small categories */
+.category-small:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.category-small h2 {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  transition: background 0.3s;
+}
+.category-small h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+.category-small h2 a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for categories */
+@media(max-width: 992px) {
+  .categories-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .category-large {
+    height: 300px;
+  }
+  .category-small {
+    width: 80%;
+    height: 150px;
+  }
+}
+
+/* CSS for features, shipping, testimonials, partners, newsletter, footer, loader ... (your existing styles) */
+
+/* ------------------ Responsive Navbar Fix ------------------ */
+
+@media(max-width: 768px) {
+  /* Show menu toggle button */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav-menu by default in mobile */
+  .nav-menu {
+    display: none; /* hidden initially in mobile */
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 4px;
+    z-index: 999;
+  }
+  /* .info-item{
+    background-color: #82ae46;
+    color: white;
+    padding-bottom: 15px;
+    margin-top: 2px;
+  } */
+  .top-info-container{
+    background-color: #82ae46;
+    color: white;
+  }
+  .top-info-container{
+    background-color: #14dff2;
+    color: white;
+  }
+  /* Show nav-menu when 'show' class added */
+  .nav-menu.show {
+    display: flex;
+  }
+}
+
+
+
+
+
