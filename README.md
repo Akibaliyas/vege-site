@@ -16,7 +16,8 @@ It's a web-based vegetable online shopping website using HTML, CSS, and JavaScri
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-https://github.com/Akibaliyas/vege-site/upload/main/images
+
 ## 🛒 Vegetable Online Shopping Website – UI Preview
 
 <img src="https://github.com/Akibaliyas/vege-site/blob/main/images/ab.png" width="600">
+
