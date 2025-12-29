@@ -1,5 +1,5 @@
 # 💫 About Me:
-I am a motivated Computer Science student with strong interest in Artificial Intelligence, Machine Learning, and Web Development. I have hands-on experience in Python, C++, deep learning models, and building real-world applications using Flask, WebRTC, and Socket.io. I enjoy solving complex problems and continuously improving my technical skills through practical projects.<br>
+It's a web-based vegetable online shopping website using HTML, CSS, and JavaScript. The platform allows users to browse fresh vegetables, view prices, and place orders through a simple and user-friendly interface.. I enjoy solving complex problems and continuously improving my technical skills through practical projects.<br>
 
 
 # 💻 Tech Stack:
