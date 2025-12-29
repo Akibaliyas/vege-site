@@ -1,4 +1,4 @@
-# 💫 About Me:
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/14837e2a-ffaa-42cc-956d-4de1b77d2cb5" /># 💫 About Me:
 It's a web-based vegetable online shopping website using HTML, CSS, and JavaScript. The platform allows users to browse fresh vegetables, view prices, and place orders through a simple and user-friendly interface.. I enjoy solving complex problems and continuously improving my technical skills through practical projects.<br>
 
 
@@ -23,3 +23,5 @@ It's a web-based vegetable online shopping website using HTML, CSS, and JavaScri
 <img src="https://github.com/Akibaliyas/vege-site/blob/main/images/ac.png" width="600">
 <img src="https://github.com/Akibaliyas/vege-site/blob/main/images/ad.png" width="600">
 <img src="https://github.com/Akibaliyas/vege-site/blob/main/images/ae.png" width="600">
+<img src="https://github.com/Akibaliyas/vege-site/blob/main/images/at.png" width="600">
+
