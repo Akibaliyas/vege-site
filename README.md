@@ -18,9 +18,6 @@ It's a web-based vegetable online shopping website using HTML, CSS, and JavaScri
 ### 🔝 Top Contributed Repo
 ![image](https://github.com/username/repo/assets/xxxxxx)
 
-![](https://github-contributor-stats.vercel.app/api?username=Akibaliyas&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
----
-[![](https://visitcount.itsvg.in/api?id=Akibaliyas&icon=0&color=0)](https://visitcount.itsvg.in)
+![image] https://github.com/Akibaliyas/vege-site/blob/main
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
